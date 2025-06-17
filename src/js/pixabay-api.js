@@ -49,11 +49,11 @@ function handleSubmit(event) {
 function createGallery(images) {
   return images.hits
     .map(
-      ({ likes, views, comments, downloads, previewURL, tags }) =>
+      ({ likes, views, comments, downloads, webformatURL, tags }) =>
         `
     <li class="image-card">
 
-    <img src="${previewURL}" alt="${tags}" class="image-icon">
+    <img src="${webformatURL}" alt="${tags}" class="image-icon">
 
   <div class="image-card-statistic">
 
