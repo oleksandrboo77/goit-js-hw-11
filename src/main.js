@@ -33,7 +33,7 @@ function handleSubmit(event) {
 
   getImagesByQuery(request)
     .then(data => {
-      if (data.hits.length === 0) {
+      if (data.length === 0) {
         iziToast.error({
           title: 'Error',
           message:
@@ -43,8 +43,7 @@ function handleSubmit(event) {
         return;
       }
 
-      galleryEl.innerHTML = createGallery(data);
-      lightbox.refresh();
+      createGallery(data);
     })
 
     .catch(error => {

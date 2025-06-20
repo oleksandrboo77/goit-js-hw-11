@@ -18,6 +18,6 @@ export function getImagesByQuery(query) {
       return res.json();
     })
     .then(data => {
-      return data;
+      return data.hits;
     });
 }

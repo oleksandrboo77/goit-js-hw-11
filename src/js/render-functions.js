@@ -22,7 +22,7 @@ export function clearGallery() {
 }
 
 export function createGallery(images) {
-  return images.hits
+  const markup = images
     .map(
       ({
         likes,
@@ -65,4 +65,6 @@ export function createGallery(images) {
     </li> `
     )
     .join('');
+  galleryEl.innerHTML = markup;
+  lightbox.refresh();
 }
